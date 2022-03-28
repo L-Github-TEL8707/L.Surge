@@ -6,9 +6,9 @@ const REQUEST_HEADERS = {
 
 ;(async () => {
   let panel_result = {
-    title: 'Netflix,YouTube解锁检测',
+    title: 'Media',
     content: '',
-    icon: 'play.tv.fill',
+    icon: '4k.tv',
     'icon-color': '#FF2D55',
   }
   await Promise.all([check_netflix(), check_youtube_premium()])
@@ -61,7 +61,7 @@ async function check_youtube_premium() {
       if (code === 'Not Available') {
         youtube_check_result += '未解锁'
       } else {
-        youtube_check_result += '已解锁，区域：' + code.toUpperCase()
+        youtube_check_result += '已解锁' + code.toUpperCase()地区
       }
     })
     .catch((error) => {
@@ -117,7 +117,7 @@ async function check_netflix() {
       if (code === 'Not Found') {
         return inner_check(80018499)
       }
-      netflix_check_result += '已解锁，区域：' + code.toUpperCase()
+      netflix_check_result += '已解锁' + code.toUpperCase()地区
       return Promise.reject('BreakSignal')
     })
     .then((code) => {
