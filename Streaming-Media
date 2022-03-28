@@ -6,7 +6,7 @@ const REQUEST_HEADERS = {
 
 ;(async () => {
   let panel_result = {
-    title: 'Media',
+    title: 'Streaming-Media',
     content: '',
     icon: '4k.tv',
     'icon-color': '#FF2D55',
